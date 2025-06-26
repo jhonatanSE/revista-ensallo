@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .container {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 34px;
+        margin: 40px;
+
+        /* FLEXBOX */
+        display: flex;
+        /* arregla cada espacio que necesita cada una de los class del container. horizontal */
+        /* todos los elementos flexbox son tan altos como el elemento mas alto */
+        align-items: center;
+        /* esto alinea los itens, pero se puede arriba o abajo tambien  */
+        /* align-items: flex-end; */
+        justify-content: flex-start;
+        /* centra el container en la paigina */
+        /* justify-content: space-between; */
+        /* espacio entre los items por igual */
+        gap: 30px;
+        /* crea un espacio entre ellas, como la margen pero mas facil */
+        /* OJO, no es lo mismo que margin */
+      }
+      /* clase que abarca todos los elementos el */
+      .el {
+        /* margin-right: 40px; */
+
+        /* 
+        DEFUALTS:
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto; */
+
+        /* QUIERO DETERMINAR EL ANCHO */
+        /* flex-basis: 200px; */
+        /* flex-shrink: 0; */
+        /* lo que hace flex-shrink: ; es determinar sila caja flexible  puede escoger el elemento  */
+        /* flex-grow: 1; */
+        /* determina si los elementos pueden crecer o no ajustandolos en todo el ancho,para eso desactivar::: flex-basis: 200px; */
+        /* PERO CASI NUNCA SE UTILIZAN INDIVIDUALMENTE, ES MAS PRACTICO ASI: */
+        /* flex: 0 0 200px; */
+        flex: 1;
+      }
+      .el--1 {
+        align-self: flex-start;
+        /* flex-grow: 2; */
+        /*tiene el doble de espacio restante que los otros, se puede aumentar 2,3,4,etc */
+      }
+      .el--5 {
+        align-self: stretch;
+        order: 1;
+        /* para mover los elementos de posicion, en este caso no sera el 5 sino el 1 */
+      }
+      .el--6 {
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+      <div class="el el--4">are</div>
+      <div class="el el--5">amazing</div>
+      <div class="el el--6">languages</div>
+      <div class="el el--7">to</div>
+      <div class="el el--8">learn</div>
+    </div>
+  </body>
+</html>

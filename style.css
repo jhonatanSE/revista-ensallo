@@ -1,0 +1,397 @@
+/*selector universal, es el de menor prioridad*/
+* {
+  /*border-top: 10px solid #1098ad;*/
+  margin: 0;
+  padding: 0;
+  /* para arreglar automaticamente el tamano del bloque y se ajuste uno al lado del otro */
+  box-sizing: border-box;
+}
+/* ELEMENTOS MAS GRANDES: page sections */
+body {
+  font-family: sans-serif; /*se a´lica siempre y cuendo en los otros elementos no se cambie esto*/
+  color: #444;
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+/* truco para centrar toda la pagina web */
+.container {
+  width: 1200px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+
+.main-header {
+  /*propiedad para colocar un color de fondo*/
+  background-color: #f7f7f7;
+  /*CAJAS, añador relleno*/
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  /*pero se puede abrebiar, primer px arriba, abajo. segundo iz, dere*/
+  padding: 20px 40px;
+  /* margin-bottom: 60px; */
+  /* height: 80px; es  */ /*es una altura fija no es muy sujerido*/
+}
+
+nav {
+  font-size: 18px;
+}
+article {
+  /* margin-bottom: 60px; */
+}
+.post-header {
+  margin-bottom: 40px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  /*border: 5px solid #1098ad; defino el anco del bordeado, linea solida y color. Eso me realiza el cuadro*/
+  border-top: 5px solid #1098ad; /*SOLO BORDE ARRIBA*/
+  border-bottom: 5px solid #1098ad; /*SOLO BORDE ABAJO. Tambien se puede izquiera y derecha*/
+  padding: 50px 40px;
+}
+/* ELEMENTO MÁS PEQUEÑOS */
+
+/*así se haya aplicado color: #444; arriba despues se sobrepone en los otros argumentos abajo el azul*/
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  /*todo lo que esta dentro son propiedades*/
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+
+  /*color: #fff; para buscar mas facil la gama de colores */
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  /* pasar de elemento de bloque a elemento de linea */
+  /* display: inline; */
+}
+li:last-child {
+  margin-bottom: 0;
+}
+
+/*footer p {
+  font-size: 16px;
+}*/
+/*
+article header p {
+  font-style: italic;
+}*/
+/* llamar al selector por tanto solo lo afecta a el*/
+/*utilizamos el # para llamdar el atributo id*/
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+#Copyright {
+  font-style: italic;
+  font-size: 16px;
+}
+/*utilizo . para llamar la clase class*/
+.related-author {
+  font-size: 18px;
+  /*propiedad paraa poner en negrita*/
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+  margin-left: 0;
+}
+/* por ahora vamos a utilizar el id para ensenar a utilizar */
+/*pero es importante siemore utilizar class para no tener bugs*/
+/*ademas, class me permite hacer actualaizaciones a futuro*/
+
+/*
+si queremos aplicar color a toda la pagina
+body {
+  background-color: #d3c2a3;
+}*/
+/*SEUDO-CLASES*/
+/*ejemplo: colocar en negrita la primera parte de la lista, teniendo en cuenta todos los elementos li que hay en el codigo*/
+li:first-child {
+  font-weight: bold;
+}
+/*ultima de la lista */
+li:last-child {
+  font-style: italic;
+}
+/*para cualquien parte de la lista*/
+li:nth-child(3) {
+  /*donde esta el tres tambien se puede palabras claves, even, odd, importante para tablas o algo así*/
+  /*color: red;*/
+}
+
+/*vamos a utilizar enlaces o hipervinculos */
+/*a:link esta seudo-clase es la que tiene mayor prioridad */
+a:link {
+  /*a:link se dirige a todos los atributos href*/
+  color: #1098ad;
+  /*elimina el sub-rayado*/
+  text-decoration: none;
+}
+
+/*establecer un color diferente si se a pulsado el anchaje o link*/
+a:visited {
+  color: #1098ad;
+}
+/*cuando pase el mause porencime del link, cambia de color, subraye etc.*/
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dotted orangered;
+}
+
+/*al hacer click cambie */
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+/* las imagen son una combiancion de elemento bloque y linea */
+.post-img {
+  /* en este caso no utilizamos px sino porcentajes */
+  width: 100%;
+  height: auto;
+}
+nav a:link {
+  /* background-color: red;*/
+  /*margin: 20px; */ /*solo mueve las margenes iz, derecha*/
+  /*padding: 20px;*/ /*se mira mas grande pero no ha creado un espacio*/
+  /* esto se debe a que es un elemento linea  */
+  /* VAMOS A CONVERTIR EL ELEMENTO LINEA EN BLOQUE */
+  /* display: block; */
+  margin-right: 30px;
+  /* margin-top: 10px; */
+  /* MEZACLA DE ELEMENTO LINEA Y BLOQUE */
+  display: inline-block;
+  /* de margenes arriba, abajo,derecha y izquierda */
+}
+/* SEUDO CLASE PARA ARREGLAR LA MARGEN A LA DERECHA POR SI SE NECESITA*/
+nav a:link:last-child {
+  margin-right: 0;
+}
+.button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+  /* UNA POSICIÓN ABSOLUTA */
+  position: absolute;
+  /* PARA MOVER EL BOTON */
+  /* top: 0;
+  left: 0; */
+  right: 100px;
+  bottom: 0;
+}
+/* SOLO AFECTA LA PRIMERA LETRA */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+/* SOLO AFECTA LA PRIMERA LINEA, hermanos adyacentes */
+
+/* h3 + P::first-line {
+  color: red;
+} */
+
+h2 {
+  /* background-color: orange; */
+  position: relative;
+}
+/* NO CREA NINGUN ELEMENTO EN EL HTML, TAMBIEN SE PUEDE UTILIZAR before */
+h2::after {
+  content: "TOP";
+  color: #000;
+  background-color: #ffe70e;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
+/*resolviendo conflictos*/
+/*
+#Copyright {
+  color: red; /* ID tiene la prioridad mas alta por eso mostrara rojo */
+/*}
+
+.Copyright {
+  color: blue;
+} /*las dos clases tiene la misma jerarquia pero se aplica la ultima por ende si se borra el id, el color que se observaria seria amarillo*/
+/*.text {
+  color: yellow;
+}
+footer p {
+  /*color: green !important;*/ /*si añado !important el texto cambia a verde */
+/*} */ /*pero eso es para cuendo no sepa que hacer, es mejor los selectores */
+
+/* FLOATS */
+/* la imagen flota en el texto  */
+/* los elementos flotantes son capaces de hacer margenes también */
+
+/* .author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+    */
+/* colabso su altura pero porque todos sus hijos son flotadores */
+
+/* nav {
+  float: right;
+} */
+
+/* .clear { */
+/* en este caso son h1 y nav por eso both para eliminar los dos */
+/* clear: both;
+} */
+
+/* limpieza de los flotaodres con el seudo elemento y corrije el colabso de altura */
+
+/* .clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+} */
+
+/* article {
+  
+  width: 825px;
+  float: left;
+} */
+/* 
+aside {
+ 
+  width: 300px;
+  float: right;
+} */
+
+/* footer { */
+
+/* para que no flote abajo de aside */
+/* clear: both;
+} */
+
+/* AHORA SE HACE LO MISMO PERO CON FLEXBOX */
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+/* desactivo esto para hacer css-grid */
+/* .flexbox {
+  display: flex;
+  align-items: flex-start;
+  /* para que no sean del mismo tamaño y se ajuste  */
+/* gap: 75px;
+  margin-bottom: 60px;
+} */
+
+/* PARA PORMATEAR TODO LO ECHO ANTERIORMENTE */
+/* article {
+  flex: 1;
+  margin-bottom: 0;
+}
+aside {
+  flex: 0 0 300px;
+}  */
+
+/* CSS GRID */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  grid-column: 1/ -1;
+}
+
+article {
+}
+aside {
+}
+
+footer {
+  grid-column: 1/-1;
+}
